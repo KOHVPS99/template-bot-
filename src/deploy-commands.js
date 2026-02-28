@@ -35,9 +35,19 @@ const command = new SlashCommandBuilder()
 const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
 
 (async () => {
-  await rest.put(
-    Routes.applicationCommands(process.env.CLIENT_ID),
-    { body: [command.toJSON()] }
-  );
-  console.log("Commands deployed.");
+  try {
+    console.log("Deploying commands...");
+
+    await rest.put(
+      Routes.applicationGuildCommands(
+        process.env.CLIENT_ID,
+        "1456645905850564723"
+      ),
+      { body: [command.toJSON()] }
+    );
+
+    console.log("Guild commands deployed.");
+  } catch (error) {
+    console.error(error);
+  }
 })();
