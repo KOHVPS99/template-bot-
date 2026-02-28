@@ -1,1 +1,30 @@
-
+{
+  "gaming": {
+    "categoryEmoji": "🎮",
+    "categories": [
+      {
+        "name": "Information",
+        "emoji": "📌",
+        "channels": [
+          { "type": "text", "emoji": "📢", "name": "announcements", "locked": true },
+          { "type": "text", "emoji": "📜", "name": "rules", "locked": true },
+          { "type": "text", "emoji": "👋", "name": "welcome", "locked": true }
+        ]
+      },
+      {
+        "name": "General",
+        "emoji": "💬",
+        "channels": [
+          { "type": "text", "emoji": "💬", "name": "general" },
+          { "type": "text", "emoji": "📸", "name": "media" }
+        ]
+      }
+    ],
+    "roles": [
+      { "emoji": "👑", "name": "Owner", "color": "#FFD700" },
+      { "emoji": "🛡", "name": "Admin", "color": "#FF3131" },
+      { "emoji": "🔧", "name": "Moderator", "color": "#3C82F6" },
+      { "emoji": "👥", "name": "Member", "color": "#2ECC71" }
+    ]
+  }
+}
