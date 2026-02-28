@@ -1,18 +1,10 @@
-const { PermissionsBitField } = require("discord.js");
-
-function checkUser(interaction) {
-  if (!interaction.memberPermissions.has(PermissionsBitField.Flags.ManageGuild)) {
-    return "You need Manage Server permission.";
+module.exports = function(interaction) {
+  if (!interaction.member.permissions.has("Administrator")) {
+    interaction.reply({
+      content: "You must be an Administrator to use this.",
+      ephemeral: true
+    });
+    return false;
   }
-  return null;
-}
-
-function checkBot(guild) {
-  const me = guild.members.me;
-  if (!me.permissions.has(PermissionsBitField.Flags.ManageChannels)) {
-    return "I need Manage Channels permission.";
-  }
-  return null;
-}
-
-module.exports = { checkUser, checkBot };
+  return true;
+};
