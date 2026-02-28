@@ -1,7 +1,7 @@
 {
   "name": "structify",
   "version": "1.0.0",
-  "description": "Structify Discord Template Bot",
+  "description": "Structify - Advanced Discord Template Bot",
   "main": "src/index.js",
   "type": "commonjs",
   "scripts": {
