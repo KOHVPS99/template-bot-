@@ -9,6 +9,10 @@ const command = new SlashCommandBuilder()
       .setDescription("Choose a template")
       .setRequired(true)
       .setAutocomplete(true)
+  )
+  .addBooleanOption(option =>
+    option.setName("include_staff")
+      .setDescription("Create staff-only category?")
   );
 
 const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
@@ -23,7 +27,7 @@ const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
       { body: [command.toJSON()] }
     );
 
-    console.log("Guild command deployed.");
+    console.log("Command deployed.");
   } catch (err) {
     console.error(err);
   }
