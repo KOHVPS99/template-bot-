@@ -1,4 +1,5 @@
 const { REST, Routes, SlashCommandBuilder } = require("discord.js");
+require("dotenv").config();
 
 const command = new SlashCommandBuilder()
   .setName("template")
@@ -13,26 +14,24 @@ const command = new SlashCommandBuilder()
 
   .addStringOption(option =>
     option.setName("channel_style")
-      .setDescription("Channel style")
+      .setDescription("Channel naming style")
       .setRequired(true)
       .addChoices(
-        { name: "Emoji Dot (📢・channel)", value: "emoji_dot" },
-        { name: "Emoji Bar (📢┃channel)", value: "emoji_bar" }
-      ))
+        { name: "Emoji Dot (📢・chat)", value: "emoji_dot" },
+        { name: "Emoji Bar (📢┃chat)", value: "emoji_bar" },
+        { name: "No Emoji", value: "plain" }
+      )
+  )
 
   .addStringOption(option =>
     option.setName("category_style")
-      .setDescription("Category style")
+      .setDescription("Category naming style")
       .setRequired(true)
       .addChoices(
-        { name: "Stars (★・・🎮・・★)", value: "stars_mid" },
-        { name: "Dash (──── 🎮 Gaming ────)", value: "dash_style" }
-      ))
-
-  .addBooleanOption(option =>
-    option.setName("use_emojis")
-      .setDescription("Enable emojis?")
-      .setRequired(true)
+        { name: "Stars (★・・🎮・・★)", value: "stars" },
+        { name: "Dash (──── 🎮 Gaming ────)", value: "dash" },
+        { name: "Plain", value: "plain" }
+      )
   )
 
   .addIntegerOption(option =>
@@ -70,7 +69,7 @@ const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
     await rest.put(
       Routes.applicationGuildCommands(
         process.env.CLIENT_ID,
-        "1456645905850564723"
+        "1456645905850564723" // your server ID
       ),
       { body: [command.toJSON()] }
     );
