@@ -1,30 +1,53 @@
 {
-  "gaming": {
-    "categoryEmoji": "🎮",
-    "categories": [
-      {
-        "name": "Information",
-        "emoji": "📌",
-        "channels": [
-          { "type": "text", "emoji": "📢", "name": "announcements", "locked": true },
-          { "type": "text", "emoji": "📜", "name": "rules", "locked": true },
-          { "type": "text", "emoji": "👋", "name": "welcome", "locked": true }
-        ]
-      },
-      {
-        "name": "General",
-        "emoji": "💬",
-        "channels": [
-          { "type": "text", "emoji": "💬", "name": "general" },
-          { "type": "text", "emoji": "📸", "name": "media" }
-        ]
-      }
-    ],
-    "roles": [
-      { "emoji": "👑", "name": "Owner", "color": "#FFD700" },
-      { "emoji": "🛡", "name": "Admin", "color": "#FF3131" },
-      { "emoji": "🔧", "name": "Moderator", "color": "#3C82F6" },
-      { "emoji": "👥", "name": "Member", "color": "#2ECC71" }
-    ]
-  }
+  "gaming": { "categoryEmoji": "🎮", "categories": [], "roles": [] },
+  "community": { "categoryEmoji": "💬", "categories": [], "roles": [] },
+  "trading": { "categoryEmoji": "📈", "categories": [], "roles": [] },
+  "crypto": { "categoryEmoji": "🪙", "categories": [], "roles": [] },
+  "stocks": { "categoryEmoji": "📊", "categories": [], "roles": [] },
+  "business": { "categoryEmoji": "💼", "categories": [], "roles": [] },
+  "startup": { "categoryEmoji": "🚀", "categories": [], "roles": [] },
+  "ai": { "categoryEmoji": "🤖", "categories": [], "roles": [] },
+  "coding": { "categoryEmoji": "💻", "categories": [], "roles": [] },
+  "developer": { "categoryEmoji": "🧠", "categories": [], "roles": [] },
+  "school": { "categoryEmoji": "🎓", "categories": [], "roles": [] },
+  "university": { "categoryEmoji": "🏫", "categories": [], "roles": [] },
+  "anime": { "categoryEmoji": "🎌", "categories": [], "roles": [] },
+  "music": { "categoryEmoji": "🎵", "categories": [], "roles": [] },
+  "producer": { "categoryEmoji": "🎧", "categories": [], "roles": [] },
+  "design": { "categoryEmoji": "🎨", "categories": [], "roles": [] },
+  "photography": { "categoryEmoji": "📷", "categories": [], "roles": [] },
+  "fitness": { "categoryEmoji": "🏋️", "categories": [], "roles": [] },
+  "gym": { "categoryEmoji": "💪", "categories": [], "roles": [] },
+  "self-improvement": { "categoryEmoji": "🔥", "categories": [], "roles": [] },
+  "islamic": { "categoryEmoji": "🕌", "categories": [], "roles": [] },
+  "study": { "categoryEmoji": "📚", "categories": [], "roles": [] },
+  "real-estate": { "categoryEmoji": "🏠", "categories": [], "roles": [] },
+  "car-community": { "categoryEmoji": "🚗", "categories": [], "roles": [] },
+  "car-trading": { "categoryEmoji": "🚘", "categories": [], "roles": [] },
+  "car-rental": { "categoryEmoji": "🛻", "categories": [], "roles": [] },
+  "content-creator": { "categoryEmoji": "🎬", "categories": [], "roles": [] },
+  "youtube": { "categoryEmoji": "▶️", "categories": [], "roles": [] },
+  "tiktok": { "categoryEmoji": "🎥", "categories": [], "roles": [] },
+  "streaming": { "categoryEmoji": "📺", "categories": [], "roles": [] },
+  "esports": { "categoryEmoji": "🏆", "categories": [], "roles": [] },
+  "roblox": { "categoryEmoji": "🟥", "categories": [], "roles": [] },
+  "minecraft": { "categoryEmoji": "🟩", "categories": [], "roles": [] },
+  "valorant": { "categoryEmoji": "🔴", "categories": [], "roles": [] },
+  "fortnite": { "categoryEmoji": "🌩", "categories": [], "roles": [] },
+  "call-of-duty": { "categoryEmoji": "🎖", "categories": [], "roles": [] },
+  "fashion": { "categoryEmoji": "👕", "categories": [], "roles": [] },
+  "dropshipping": { "categoryEmoji": "📦", "categories": [], "roles": [] },
+  "web3": { "categoryEmoji": "🌐", "categories": [], "roles": [] },
+  "nft": { "categoryEmoji": "🖼", "categories": [], "roles": [] },
+  "tech": { "categoryEmoji": "⚙️", "categories": [], "roles": [] },
+  "meme": { "categoryEmoji": "😂", "categories": [], "roles": [] },
+  "hangout": { "categoryEmoji": "🛋", "categories": [], "roles": [] },
+  "verified-server": { "categoryEmoji": "✅", "categories": [], "roles": [] },
+  "premium": { "categoryEmoji": "💎", "categories": [], "roles": [] },
+  "support": { "categoryEmoji": "🛠", "categories": [], "roles": [] },
+  "marketplace": { "categoryEmoji": "🛒", "categories": [], "roles": [] },
+  "events": { "categoryEmoji": "🎉", "categories": [], "roles": [] },
+  "media": { "categoryEmoji": "📸", "categories": [], "roles": [] },
+  "news": { "categoryEmoji": "📰", "categories": [], "roles": [] },
+  "global": { "categoryEmoji": "🌍", "categories": [], "roles": [] }
 }
