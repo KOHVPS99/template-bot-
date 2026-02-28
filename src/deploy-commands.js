@@ -9,10 +9,6 @@ const command = new SlashCommandBuilder()
       .setDescription("Choose a template")
       .setRequired(true)
       .setAutocomplete(true)
-  )
-  .addBooleanOption(option =>
-    option.setName("include_staff")
-      .setDescription("Create staff-only category?")
   );
 
 const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
@@ -20,14 +16,11 @@ const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
 (async () => {
   try {
     await rest.put(
-      Routes.applicationGuildCommands(
-        process.env.CLIENT_ID,
-        "1456645905850564723"
-      ),
+      Routes.applicationCommands(process.env.CLIENT_ID),
       { body: [command.toJSON()] }
     );
 
-    console.log("Command deployed.");
+    console.log("Global command deployed.");
   } catch (err) {
     console.error(err);
   }
