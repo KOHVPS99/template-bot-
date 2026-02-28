@@ -1,6 +1,5 @@
 module.exports = {
   MAX_CATEGORIES: 20,
   MAX_CHANNELS: 100,
-  MAX_ROLES: 25,
-  COOLDOWN_MINUTES: 30
+  MAX_ROLES: 25
 };
