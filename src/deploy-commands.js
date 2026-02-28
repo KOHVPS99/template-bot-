@@ -3,33 +3,62 @@ const { REST, Routes, SlashCommandBuilder } = require("discord.js");
 const command = new SlashCommandBuilder()
   .setName("template")
   .setDescription("Create a server template")
+
   .addStringOption(option =>
     option.setName("template")
-      .setDescription("Template name")
+      .setDescription("Choose a template")
       .setRequired(true)
-      .addChoices(
-        { name: "gaming", value: "gaming" }
-      ))
+      .setAutocomplete(true)
+  )
+
   .addStringOption(option =>
     option.setName("channel_style")
       .setDescription("Channel style")
       .setRequired(true)
       .addChoices(
-        { name: "Emoji Dot", value: "emoji_dot" },
-        { name: "Emoji Bar", value: "emoji_bar" }
+        { name: "Emoji Dot (📢・channel)", value: "emoji_dot" },
+        { name: "Emoji Bar (📢┃channel)", value: "emoji_bar" }
       ))
+
   .addStringOption(option =>
     option.setName("category_style")
       .setDescription("Category style")
       .setRequired(true)
       .addChoices(
-        { name: "Stars", value: "stars_mid" },
-        { name: "Dash", value: "dash_style" }
+        { name: "Stars (★・・🎮・・★)", value: "stars_mid" },
+        { name: "Dash (──── 🎮 Gaming ────)", value: "dash_style" }
       ))
+
   .addBooleanOption(option =>
     option.setName("use_emojis")
-      .setDescription("Use emojis?")
+      .setDescription("Enable emojis?")
       .setRequired(true)
+  )
+
+  .addIntegerOption(option =>
+    option.setName("categories_count")
+      .setDescription("Number of categories (max 20)")
+      .setMinValue(1)
+      .setMaxValue(20)
+  )
+
+  .addIntegerOption(option =>
+    option.setName("channels_count")
+      .setDescription("Total channels (max 100)")
+      .setMinValue(1)
+      .setMaxValue(100)
+  )
+
+  .addIntegerOption(option =>
+    option.setName("roles_count")
+      .setDescription("Number of roles (max 25)")
+      .setMinValue(1)
+      .setMaxValue(25)
+  )
+
+  .addBooleanOption(option =>
+    option.setName("include_staff_category")
+      .setDescription("Create staff-only category?")
   );
 
 const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
@@ -46,7 +75,7 @@ const rest = new REST({ version: "10" }).setToken(process.env.TOKEN);
       { body: [command.toJSON()] }
     );
 
-    console.log("Guild commands deployed.");
+    console.log("Guild commands deployed successfully.");
   } catch (error) {
     console.error(error);
   }
