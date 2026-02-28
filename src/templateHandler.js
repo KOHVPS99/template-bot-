@@ -1,6 +1,9 @@
 const { ChannelType, PermissionsBitField } = require("discord.js");
 const limits = require("./limits");
 
+const categoryEmojis = ["🎮","💬","🚀","📈","🎵","🧠","🏆","🌍"];
+const channelEmojis = ["📢","💬","🔥","🎮","📸","🧠","🚀","🎧","💎","📊"];
+
 module.exports = async function (guild, template, options) {
 
   let {
@@ -12,24 +15,13 @@ module.exports = async function (guild, template, options) {
     includeStaff
   } = options;
 
-  // ============================
+  // =====================
   // APPLY LIMITS
-  // ============================
+  // =====================
 
-  rolesCount = Math.min(
-    rolesCount || template.roles.length,
-    limits.MAX_ROLES
-  );
-
-  categoriesCount = Math.min(
-    categoriesCount || template.categories.length,
-    limits.MAX_CATEGORIES
-  );
-
-  channelsCount = Math.min(
-    channelsCount || limits.MIN_CHANNELS,
-    limits.MAX_CHANNELS
-  );
+  rolesCount = Math.min(rolesCount || template.roles.length, limits.MAX_ROLES);
+  categoriesCount = Math.min(categoriesCount || 5, limits.MAX_CATEGORIES);
+  channelsCount = Math.min(channelsCount || 20, limits.MAX_CHANNELS);
 
   if (categoriesCount < limits.MIN_CATEGORIES)
     categoriesCount = limits.MIN_CATEGORIES;
@@ -37,20 +29,21 @@ module.exports = async function (guild, template, options) {
   if (channelsCount < limits.MIN_CHANNELS)
     channelsCount = limits.MIN_CHANNELS;
 
-  // ============================
-  // CREATE ROLES (MAX 10)
-  // ============================
+  // =====================
+  // CREATE ROLES
+  // =====================
 
-  const baseRoles = template.roles || [];
   const createdRoles = [];
 
   for (let i = 0; i < rolesCount; i++) {
 
-    const roleName =
-      baseRoles[i] ? baseRoles[i].name : `Member-${i + 1}`;
+    const roleName = template.roles[i]
+      ? template.roles[i].name
+      : `Member-${i + 1}`;
 
-    const roleColor =
-      baseRoles[i] ? baseRoles[i].color : "#3498db";
+    const roleColor = template.roles[i]
+      ? template.roles[i].color
+      : "#3498db";
 
     const newRole = await guild.roles.create({
       name: roleName,
@@ -60,80 +53,75 @@ module.exports = async function (guild, template, options) {
     createdRoles.push(newRole);
   }
 
-  // ============================
-  // PREPARE CATEGORIES
-  // ============================
+  // =====================
+  // CREATE CATEGORIES + CHANNELS
+  // =====================
 
-  const baseCategories = template.categories || [];
-  const categories = [];
+  const channelsPerCategory = Math.floor(channelsCount / categoriesCount);
+  const remainder = channelsCount % categoriesCount;
+
+  let channelCounter = 0;
 
   for (let i = 0; i < categoriesCount; i++) {
 
-    const base = baseCategories[i % baseCategories.length] || {
-      name: `section-${i + 1}`,
-      channels: ["chat"]
-    };
+    let baseName = template.categories[i]
+      ? template.categories[i].name
+      : `section-${i + 1}`;
 
-    categories.push({
-      name: base.name,
-      channels: base.channels
-    });
-  }
+    const catEmoji = categoryEmojis[i % categoryEmojis.length];
 
-  // ============================
-  // CHANNEL DISTRIBUTION
-  // ============================
-
-  const channelsPerCategory = Math.floor(
-    channelsCount / categoriesCount
-  );
-
-  const extraChannels = channelsCount % categoriesCount;
-
-  for (let i = 0; i < categories.length; i++) {
-
-    let categoryName = categories[i].name;
+    let categoryName = baseName;
 
     if (categoryStyle === "stars")
-      categoryName = `★・・${template.categoryEmoji} ${categoryName}・・★`;
+      categoryName = `★・・${catEmoji} ${baseName}・・★`;
 
     if (categoryStyle === "dash")
-      categoryName = `──── ${template.categoryEmoji} ${categoryName} ────`;
+      categoryName = `──── ${catEmoji} ${baseName} ────`;
+
+    if (categoryStyle === "plain")
+      categoryName = baseName;
 
     const category = await guild.channels.create({
       name: categoryName,
       type: ChannelType.GuildCategory
     });
 
-    let channelAmount = channelsPerCategory;
-    if (i < extraChannels) channelAmount++;
+    let amount = channelsPerCategory;
+    if (i < remainder) amount++;
 
-    for (let j = 0; j < channelAmount; j++) {
+    for (let j = 0; j < amount; j++) {
 
-      const baseChannel =
-        categories[i].channels[
-          j % categories[i].channels.length
-        ];
+      const channelEmoji = channelEmojis[channelCounter % channelEmojis.length];
+
+      let baseChannel = template.categories[i] &&
+        template.categories[i].channels[j]
+        ? template.categories[i].channels[j]
+        : `chat-${channelCounter + 1}`;
 
       let finalName = baseChannel;
 
       if (channelStyle === "emoji_dot")
-        finalName = `📢・${baseChannel}-${j + 1}`;
+        finalName = `${channelEmoji}・${baseChannel}`;
 
       if (channelStyle === "emoji_bar")
-        finalName = `📢┃${baseChannel}-${j + 1}`;
+        finalName = `${channelEmoji}┃${baseChannel}`;
+
+      if (channelStyle === "plain")
+        finalName = baseChannel;
 
       await guild.channels.create({
         name: finalName,
         type: ChannelType.GuildText,
         parent: category.id
       });
+
+      channelCounter++;
     }
   }
 
-  // ============================
-  // STAFF CATEGORY
-  // ============================
+  // =====================
+  // STAFF SECTION
+  // =====================
 
   if (includeStaff && createdRoles.length > 0) {
 
@@ -158,5 +146,4 @@ module.exports = async function (guild, template, options) {
       parent: staffCategory.id
     });
   }
-
 };
