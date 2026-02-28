@@ -2,94 +2,439 @@
   "gaming": {
     "categoryEmoji": "🎮",
     "categories": [
-      {
-        "name": "general",
-        "channels": ["chat", "media", "memes", "clips"]
-      },
-      {
-        "name": "voice",
-        "channels": ["General VC", "Squad VC", "AFK"]
-      },
-      {
-        "name": "info",
-        "channels": ["rules", "announcements"]
-      }
+      { "name": "info", "channels": ["announcements", "rules", "updates"] },
+      { "name": "general", "channels": ["chat", "media", "memes", "clips"] },
+      { "name": "voice", "channels": ["General VC", "Squad VC", "AFK"] }
     ],
     "roles": [
-      { "name": "🎮 Owner", "color": "#ff0000" },
+      { "name": "👑 Owner", "color": "#ff0000" },
       { "name": "🛡 Admin", "color": "#ff6600" },
-      { "name": "🎯 Moderator", "color": "#0099ff" },
-      { "name": "👥 Member", "color": "#00ff99" }
+      { "name": "🎯 Mod", "color": "#0099ff" },
+      { "name": "👥 Gamer", "color": "#00ff99" }
+    ]
+  },
+
+  "minecraft": {
+    "categoryEmoji": "🟩",
+    "categories": [
+      { "name": "server", "channels": ["ip-info", "server-status", "updates"] },
+      { "name": "community", "channels": ["chat", "build-showcase", "screenshots"] },
+      { "name": "voice", "channels": ["Survival VC", "Creative VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "🟩 Owner", "color": "#2ecc71" },
+      { "name": "🛠 Builder", "color": "#27ae60" },
+      { "name": "⛏ Miner", "color": "#1abc9c" },
+      { "name": "👥 Member", "color": "#3498db" }
+    ]
+  },
+
+  "valorant": {
+    "categoryEmoji": "🔴",
+    "categories": [
+      { "name": "ranked", "channels": ["rank-chat", "team-finder", "scrims"] },
+      { "name": "content", "channels": ["clips", "ace-moments", "crosshair-codes"] },
+      { "name": "voice", "channels": ["Duo VC", "Trio VC", "5 Stack VC"] }
+    ],
+    "roles": [
+      { "name": "🔴 Radiant", "color": "#e74c3c" },
+      { "name": "⚡ Immortal", "color": "#c0392b" },
+      { "name": "🎯 Ranked", "color": "#9b59b6" },
+      { "name": "👥 Member", "color": "#3498db" }
+    ]
+  },
+
+  "fortnite": {
+    "categoryEmoji": "🌩",
+    "categories": [
+      { "name": "battle-royale", "channels": ["squad-up", "updates", "loadouts"] },
+      { "name": "creative", "channels": ["creative-maps", "zonewars", "practice"] },
+      { "name": "voice", "channels": ["Duos VC", "Trios VC", "Squads VC"] }
+    ],
+    "roles": [
+      { "name": "🌩 Champion", "color": "#9b59b6" },
+      { "name": "🏆 Grinder", "color": "#8e44ad" },
+      { "name": "🎮 Player", "color": "#3498db" }
+    ]
+  },
+
+  "roblox": {
+    "categoryEmoji": "🟥",
+    "categories": [
+      { "name": "games", "channels": ["ps99", "trading", "game-talk"] },
+      { "name": "market", "channels": ["price-check", "offers", "giveaways"] },
+      { "name": "voice", "channels": ["Grinding VC", "Trading VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "🟥 Owner", "color": "#e74c3c" },
+      { "name": "💎 Trader", "color": "#9b59b6" },
+      { "name": "🎁 Giver", "color": "#f1c40f" },
+      { "name": "👥 Member", "color": "#3498db" }
+    ]
+  },
+
+  "call-of-duty": {
+    "categoryEmoji": "🎖",
+    "categories": [
+      { "name": "warzone", "channels": ["squad-up", "meta-loadouts", "clips"] },
+      { "name": "ranked", "channels": ["ranked-chat", "team-finder", "scrims"] },
+      { "name": "voice", "channels": ["Duos VC", "Trios VC", "Quads VC"] }
+    ],
+    "roles": [
+      { "name": "🎖 Captain", "color": "#f39c12" },
+      { "name": "🛡 Admin", "color": "#e67e22" },
+      { "name": "👥 Soldier", "color": "#3498db" }
+    ]
+  },
+
+  "esports": {
+    "categoryEmoji": "🏆",
+    "categories": [
+      { "name": "events", "channels": ["announcements", "tournaments", "schedule"] },
+      { "name": "teams", "channels": ["team-finder", "rosters", "scrims"] },
+      { "name": "voice", "channels": ["Scrim VC", "Coaching VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "🏆 Organizer", "color": "#f1c40f" },
+      { "name": "🎮 Player", "color": "#3498db" },
+      { "name": "🧠 Coach", "color": "#9b59b6" }
     ]
   },
 
   "community": {
     "categoryEmoji": "💬",
     "categories": [
-      { "name": "general", "channels": ["chat", "introductions", "media"] },
-      { "name": "voice", "channels": ["General VC", "Chill VC"] },
-      { "name": "info", "channels": ["rules", "announcements"] }
+      { "name": "welcome", "channels": ["announcements", "rules", "introductions"] },
+      { "name": "chat", "channels": ["general", "media", "memes"] },
+      { "name": "voice", "channels": ["General VC", "Chill VC", "AFK"] }
     ],
     "roles": [
       { "name": "👑 Owner", "color": "#ff0000" },
-      { "name": "🛡 Staff", "color": "#ffaa00" },
-      { "name": "👥 Member", "color": "#00ffaa" }
+      { "name": "🛡 Staff", "color": "#ff9900" },
+      { "name": "✅ Verified", "color": "#2ecc71" },
+      { "name": "👥 Member", "color": "#3498db" }
     ]
   },
 
-  "trading": {
-    "categoryEmoji": "📈",
+  "hangout": {
+    "categoryEmoji": "🛋",
     "categories": [
-      { "name": "market", "channels": ["live-trades", "analysis", "signals"] },
-      { "name": "education", "channels": ["guides", "resources"] },
-      { "name": "info", "channels": ["rules", "announcements"] }
+      { "name": "main", "channels": ["chat", "late-night", "confessions"] },
+      { "name": "fun", "channels": ["memes", "games", "questions"] },
+      { "name": "voice", "channels": ["Hangout VC", "Music VC", "AFK"] }
     ],
     "roles": [
-      { "name": "📊 Analyst", "color": "#00ffcc" },
-      { "name": "💎 VIP", "color": "#9900ff" },
-      { "name": "👥 Member", "color": "#00ffaa" }
+      { "name": "🛋 Host", "color": "#9b59b6" },
+      { "name": "✨ Regular", "color": "#1abc9c" },
+      { "name": "👥 Member", "color": "#3498db" }
     ]
   },
 
-  "crypto": {
-    "categoryEmoji": "🪙",
+  "school": {
+    "categoryEmoji": "🎓",
     "categories": [
-      { "name": "crypto", "channels": ["btc-chat", "altcoins", "nft-talk"] },
-      { "name": "alpha", "channels": ["signals", "airdrops"] },
-      { "name": "info", "channels": ["rules", "announcements"] }
+      { "name": "classes", "channels": ["homework-help", "resources", "announcements"] },
+      { "name": "study", "channels": ["study-room", "notes", "questions"] },
+      { "name": "voice", "channels": ["Study VC", "Group VC", "AFK"] }
     ],
     "roles": [
-      { "name": "🪙 Holder", "color": "#ffaa00" },
-      { "name": "🚀 Trader", "color": "#00ffff" },
-      { "name": "👥 Member", "color": "#00ffaa" }
+      { "name": "🎓 Teacher", "color": "#e74c3c" },
+      { "name": "🧠 Helper", "color": "#1abc9c" },
+      { "name": "👥 Student", "color": "#3498db" }
     ]
   },
 
-  "business": {
-    "categoryEmoji": "💼",
+  "university": {
+    "categoryEmoji": "🏫",
     "categories": [
-      { "name": "networking", "channels": ["introductions", "partnerships"] },
-      { "name": "growth", "channels": ["marketing", "strategy"] },
-      { "name": "info", "channels": ["rules", "announcements"] }
+      { "name": "campus", "channels": ["announcements", "clubs", "events"] },
+      { "name": "academics", "channels": ["course-help", "resources", "internships"] },
+      { "name": "voice", "channels": ["Study VC", "Project VC", "AFK"] }
     ],
     "roles": [
-      { "name": "💼 Founder", "color": "#ff0000" },
-      { "name": "📊 Manager", "color": "#ff9900" },
-      { "name": "👥 Member", "color": "#00ffaa" }
+      { "name": "🏫 Admin", "color": "#e67e22" },
+      { "name": "📚 Mentor", "color": "#9b59b6" },
+      { "name": "👥 Student", "color": "#3498db" }
+    ]
+  },
+
+  "study": {
+    "categoryEmoji": "📚",
+    "categories": [
+      { "name": "focus", "channels": ["pomodoro", "goals", "progress"] },
+      { "name": "help", "channels": ["questions", "resources", "tips"] },
+      { "name": "voice", "channels": ["Focus VC", "Study VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "📚 Leader", "color": "#9b59b6" },
+      { "name": "✅ Focused", "color": "#2ecc71" },
+      { "name": "👥 Member", "color": "#3498db" }
+    ]
+  },
+
+  "music": {
+    "categoryEmoji": "🎵",
+    "categories": [
+      { "name": "music", "channels": ["song-recs", "playlists", "music-chat"] },
+      { "name": "creators", "channels": ["lyrics", "collabs", "feedback"] },
+      { "name": "voice", "channels": ["Music VC", "Jam VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "🎵 Artist", "color": "#e74c3c" },
+      { "name": "🎧 Listener", "color": "#3498db" },
+      { "name": "✨ DJ", "color": "#9b59b6" }
+    ]
+  },
+
+  "producer": {
+    "categoryEmoji": "🎧",
+    "categories": [
+      { "name": "production", "channels": ["beats", "mixing", "mastering"] },
+      { "name": "collab", "channels": ["collabs", "feedback", "resources"] },
+      { "name": "voice", "channels": ["Studio VC", "Review VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "🎧 Producer", "color": "#9b59b6" },
+      { "name": "🎤 Vocalist", "color": "#e74c3c" },
+      { "name": "👥 Member", "color": "#3498db" }
+    ]
+  },
+
+  "anime": {
+    "categoryEmoji": "🎌",
+    "categories": [
+      { "name": "anime", "channels": ["recommendations", "watch-list", "spoilers"] },
+      { "name": "media", "channels": ["fan-art", "clips", "memes"] },
+      { "name": "voice", "channels": ["Watch Party VC", "Chat VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "🎌 Senpai", "color": "#e74c3c" },
+      { "name": "✨ Weeb", "color": "#9b59b6" },
+      { "name": "👥 Member", "color": "#3498db" }
+    ]
+  },
+
+  "design": {
+    "categoryEmoji": "🎨",
+    "categories": [
+      { "name": "design", "channels": ["showcase", "feedback", "resources"] },
+      { "name": "requests", "channels": ["commissions", "requests", "pricing"] },
+      { "name": "voice", "channels": ["Design VC", "Review VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "🎨 Designer", "color": "#9b59b6" },
+      { "name": "🧠 Reviewer", "color": "#1abc9c" },
+      { "name": "👥 Client", "color": "#3498db" }
+    ]
+  },
+
+  "photography": {
+    "categoryEmoji": "📷",
+    "categories": [
+      { "name": "photos", "channels": ["showcase", "critique", "gear-talk"] },
+      { "name": "learning", "channels": ["tips", "editing", "resources"] },
+      { "name": "voice", "channels": ["Critique VC", "Chat VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "📷 Photographer", "color": "#e67e22" },
+      { "name": "🖼 Editor", "color": "#9b59b6" },
+      { "name": "👥 Member", "color": "#3498db" }
+    ]
+  },
+
+  "content-creator": {
+    "categoryEmoji": "🎬",
+    "categories": [
+      { "name": "creator-hub", "channels": ["ideas", "scripts", "thumbnails"] },
+      { "name": "growth", "channels": ["seo", "analytics", "collabs"] },
+      { "name": "voice", "channels": ["Creator VC", "Collab VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "🎬 Creator", "color": "#e74c3c" },
+      { "name": "📈 Growth", "color": "#1abc9c" },
+      { "name": "👥 Member", "color": "#3498db" }
+    ]
+  },
+
+  "youtube": {
+    "categoryEmoji": "▶️",
+    "categories": [
+      { "name": "youtube", "channels": ["video-drops", "feedback", "collabs"] },
+      { "name": "growth", "channels": ["seo", "titles", "thumbnails"] },
+      { "name": "voice", "channels": ["Creator VC", "Review VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "▶️ YouTuber", "color": "#e74c3c" },
+      { "name": "🧠 Editor", "color": "#9b59b6" },
+      { "name": "👥 Subscriber", "color": "#3498db" }
+    ]
+  },
+
+  "tiktok": {
+    "categoryEmoji": "🎥",
+    "categories": [
+      { "name": "tiktok", "channels": ["video-drops", "trends", "ideas"] },
+      { "name": "growth", "channels": ["hooks", "hashtags", "analytics"] },
+      { "name": "voice", "channels": ["Creator VC", "Trend VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "🎥 Creator", "color": "#9b59b6" },
+      { "name": "🔥 Trend", "color": "#e67e22" },
+      { "name": "👥 Member", "color": "#3498db" }
+    ]
+  },
+
+  "streaming": {
+    "categoryEmoji": "📺",
+    "categories": [
+      { "name": "streaming", "channels": ["live-now", "schedule", "clips"] },
+      { "name": "community", "channels": ["chat", "suggestions", "support"] },
+      { "name": "voice", "channels": ["Stream VC", "Gaming VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "📺 Streamer", "color": "#9b59b6" },
+      { "name": "💜 Supporter", "color": "#8e44ad" },
+      { "name": "👥 Viewer", "color": "#3498db" }
     ]
   },
 
   "ai": {
     "categoryEmoji": "🤖",
     "categories": [
-      { "name": "ai-chat", "channels": ["prompts", "tools", "projects"] },
-      { "name": "coding", "channels": ["python", "js", "ai-models"] },
-      { "name": "info", "channels": ["rules", "announcements"] }
+      { "name": "ai", "channels": ["prompts", "tools", "showcase"] },
+      { "name": "projects", "channels": ["ideas", "builds", "feedback"] },
+      { "name": "voice", "channels": ["Dev VC", "Collab VC", "AFK"] }
     ],
     "roles": [
-      { "name": "🤖 Developer", "color": "#00ffff" },
-      { "name": "🧠 Researcher", "color": "#ff00ff" },
-      { "name": "👥 Member", "color": "#00ffaa" }
+      { "name": "🤖 Builder", "color": "#00ffff" },
+      { "name": "🧠 Research", "color": "#ff00ff" },
+      { "name": "👥 Member", "color": "#3498db" }
+    ]
+  },
+
+  "coding": {
+    "categoryEmoji": "💻",
+    "categories": [
+      { "name": "dev", "channels": ["help", "projects", "code-snippets"] },
+      { "name": "languages", "channels": ["javascript", "python", "other"] },
+      { "name": "voice", "channels": ["Pair VC", "Review VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "💻 Developer", "color": "#1abc9c" },
+      { "name": "🧠 Helper", "color": "#9b59b6" },
+      { "name": "👥 Member", "color": "#3498db" }
+    ]
+  },
+
+  "cybersecurity": {
+    "categoryEmoji": "🛡️",
+    "categories": [
+      { "name": "security", "channels": ["news", "tools", "writeups"] },
+      { "name": "practice", "channels": ["ctf", "labs", "resources"] },
+      { "name": "voice", "channels": ["CTF VC", "Study VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "🛡️ Blue Team", "color": "#3498db" },
+      { "name": "🧨 Red Team", "color": "#e74c3c" },
+      { "name": "👥 Member", "color": "#2ecc71" }
+    ]
+  },
+
+  "business": {
+    "categoryEmoji": "💼",
+    "categories": [
+      { "name": "networking", "channels": ["introductions", "partnerships", "jobs"] },
+      { "name": "growth", "channels": ["marketing", "strategy", "resources"] },
+      { "name": "voice", "channels": ["Business VC", "Pitch VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "💼 Founder", "color": "#e74c3c" },
+      { "name": "📊 Manager", "color": "#f39c12" },
+      { "name": "👥 Member", "color": "#3498db" }
+    ]
+  },
+
+  "startup": {
+    "categoryEmoji": "🚀",
+    "categories": [
+      { "name": "startup", "channels": ["ideas", "pitch-deck", "founders"] },
+      { "name": "build", "channels": ["product", "feedback", "roadmap"] },
+      { "name": "voice", "channels": ["Founder VC", "Pitch VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "🚀 Founder", "color": "#e74c3c" },
+      { "name": "🧠 Advisor", "color": "#9b59b6" },
+      { "name": "👥 Builder", "color": "#1abc9c" }
+    ]
+  },
+
+  "dropshipping": {
+    "categoryEmoji": "📦",
+    "categories": [
+      { "name": "store", "channels": ["product-research", "ad-creatives", "suppliers"] },
+      { "name": "growth", "channels": ["tiktok-ads", "meta-ads", "scaling"] },
+      { "name": "voice", "channels": ["Work VC", "Calls VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "📦 Owner", "color": "#e67e22" },
+      { "name": "📈 Growth", "color": "#1abc9c" },
+      { "name": "👥 Member", "color": "#3498db" }
+    ]
+  },
+
+  "real-estate": {
+    "categoryEmoji": "🏠",
+    "categories": [
+      { "name": "listings", "channels": ["for-sale", "for-rent", "deals"] },
+      { "name": "discussion", "channels": ["market-talk", "investing", "resources"] },
+      { "name": "voice", "channels": ["Calls VC", "Invest VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "🏠 Broker", "color": "#e67e22" },
+      { "name": "💼 Investor", "color": "#9b59b6" },
+      { "name": "👥 Member", "color": "#3498db" }
+    ]
+  },
+
+  "fitness": {
+    "categoryEmoji": "🏋️",
+    "categories": [
+      { "name": "fitness", "channels": ["progress", "workouts", "nutrition"] },
+      { "name": "community", "channels": ["chat", "motivation", "questions"] },
+      { "name": "voice", "channels": ["Gym VC", "Accountability VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "🏋️ Coach", "color": "#e74c3c" },
+      { "name": "🔥 Grinder", "color": "#f39c12" },
+      { "name": "👥 Member", "color": "#2ecc71" }
+    ]
+  },
+
+  "gym": {
+    "categoryEmoji": "💪",
+    "categories": [
+      { "name": "training", "channels": ["plans", "form-check", "progress"] },
+      { "name": "diet", "channels": ["nutrition", "supplements", "recipes"] },
+      { "name": "voice", "channels": ["Lift VC", "Chat VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "💪 Coach", "color": "#e74c3c" },
+      { "name": "✅ Regular", "color": "#2ecc71" },
+      { "name": "👥 Member", "color": "#3498db" }
+    ]
+  },
+
+  "fashion": {
+    "categoryEmoji": "👕",
+    "categories": [
+      { "name": "fashion", "channels": ["outfits", "streetwear", "reviews"] },
+      { "name": "market", "channels": ["buy-sell", "deals", "legit-check"] },
+      { "name": "voice", "channels": ["Fashion VC", "Chat VC", "AFK"] }
+    ],
+    "roles": [
+      { "name": "👕 Stylist", "color": "#9b59b6" },
+      { "name": "✨ Trend", "color": "#1abc9c" },
+      { "name": "👥 Member", "color": "#3498db" }
     ]
   }
 }
