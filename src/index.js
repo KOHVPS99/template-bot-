@@ -4,7 +4,7 @@ require("dotenv").config();
 const templates = require("./data/templates.json");
 const templateHandler = require("./templateHandler");
 const cooldown = require("./cooldown");
-const permissions = require("./permissions");
+const checkPermissions = require("./permissions");
 
 const client = new Client({
   intents: [GatewayIntentBits.Guilds]
@@ -16,6 +16,7 @@ client.once("ready", () => {
 
 client.on("interactionCreate", async interaction => {
 
+  // AUTOCOMPLETE
   if (interaction.isAutocomplete()) {
     const focused = interaction.options.getFocused();
     const templateNames = Object.keys(templates);
@@ -33,16 +34,18 @@ client.on("interactionCreate", async interaction => {
   if (!interaction.isChatInputCommand()) return;
   if (interaction.commandName !== "template") return;
 
-  if (!permissions(interaction)) return;
+  if (!checkPermissions(interaction)) return;
 
   if (!cooldown(interaction.user.id)) {
     return interaction.reply({
-      content: "Slow down. Try again in a few seconds.",
+      content: "Please wait before using this again.",
       ephemeral: true
     });
   }
 
   const templateName = interaction.options.getString("template");
+  const includeStaff = interaction.options.getBoolean("include_staff");
+
   const template = templates[templateName];
 
   if (!template) {
@@ -57,10 +60,10 @@ client.on("interactionCreate", async interaction => {
     ephemeral: true
   });
 
-  await templateHandler(interaction.guild, template);
+  await templateHandler(interaction.guild, template, includeStaff);
 
   await interaction.followUp({
-    content: "Server built successfully.",
+    content: "Server structure created successfully.",
     ephemeral: true
   });
 
