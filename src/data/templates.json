@@ -1,53 +1,95 @@
 {
-  "gaming": { "categoryEmoji": "🎮", "categories": [], "roles": [] },
-  "community": { "categoryEmoji": "💬", "categories": [], "roles": [] },
-  "trading": { "categoryEmoji": "📈", "categories": [], "roles": [] },
-  "crypto": { "categoryEmoji": "🪙", "categories": [], "roles": [] },
-  "stocks": { "categoryEmoji": "📊", "categories": [], "roles": [] },
-  "business": { "categoryEmoji": "💼", "categories": [], "roles": [] },
-  "startup": { "categoryEmoji": "🚀", "categories": [], "roles": [] },
-  "ai": { "categoryEmoji": "🤖", "categories": [], "roles": [] },
-  "coding": { "categoryEmoji": "💻", "categories": [], "roles": [] },
-  "developer": { "categoryEmoji": "🧠", "categories": [], "roles": [] },
-  "school": { "categoryEmoji": "🎓", "categories": [], "roles": [] },
-  "university": { "categoryEmoji": "🏫", "categories": [], "roles": [] },
-  "anime": { "categoryEmoji": "🎌", "categories": [], "roles": [] },
-  "music": { "categoryEmoji": "🎵", "categories": [], "roles": [] },
-  "producer": { "categoryEmoji": "🎧", "categories": [], "roles": [] },
-  "design": { "categoryEmoji": "🎨", "categories": [], "roles": [] },
-  "photography": { "categoryEmoji": "📷", "categories": [], "roles": [] },
-  "fitness": { "categoryEmoji": "🏋️", "categories": [], "roles": [] },
-  "gym": { "categoryEmoji": "💪", "categories": [], "roles": [] },
-  "self-improvement": { "categoryEmoji": "🔥", "categories": [], "roles": [] },
-  "islamic": { "categoryEmoji": "🕌", "categories": [], "roles": [] },
-  "study": { "categoryEmoji": "📚", "categories": [], "roles": [] },
-  "real-estate": { "categoryEmoji": "🏠", "categories": [], "roles": [] },
-  "car-community": { "categoryEmoji": "🚗", "categories": [], "roles": [] },
-  "car-trading": { "categoryEmoji": "🚘", "categories": [], "roles": [] },
-  "car-rental": { "categoryEmoji": "🛻", "categories": [], "roles": [] },
-  "content-creator": { "categoryEmoji": "🎬", "categories": [], "roles": [] },
-  "youtube": { "categoryEmoji": "▶️", "categories": [], "roles": [] },
-  "tiktok": { "categoryEmoji": "🎥", "categories": [], "roles": [] },
-  "streaming": { "categoryEmoji": "📺", "categories": [], "roles": [] },
-  "esports": { "categoryEmoji": "🏆", "categories": [], "roles": [] },
-  "roblox": { "categoryEmoji": "🟥", "categories": [], "roles": [] },
-  "minecraft": { "categoryEmoji": "🟩", "categories": [], "roles": [] },
-  "valorant": { "categoryEmoji": "🔴", "categories": [], "roles": [] },
-  "fortnite": { "categoryEmoji": "🌩", "categories": [], "roles": [] },
-  "call-of-duty": { "categoryEmoji": "🎖", "categories": [], "roles": [] },
-  "fashion": { "categoryEmoji": "👕", "categories": [], "roles": [] },
-  "dropshipping": { "categoryEmoji": "📦", "categories": [], "roles": [] },
-  "web3": { "categoryEmoji": "🌐", "categories": [], "roles": [] },
-  "nft": { "categoryEmoji": "🖼", "categories": [], "roles": [] },
-  "tech": { "categoryEmoji": "⚙️", "categories": [], "roles": [] },
-  "meme": { "categoryEmoji": "😂", "categories": [], "roles": [] },
-  "hangout": { "categoryEmoji": "🛋", "categories": [], "roles": [] },
-  "verified-server": { "categoryEmoji": "✅", "categories": [], "roles": [] },
-  "premium": { "categoryEmoji": "💎", "categories": [], "roles": [] },
-  "support": { "categoryEmoji": "🛠", "categories": [], "roles": [] },
-  "marketplace": { "categoryEmoji": "🛒", "categories": [], "roles": [] },
-  "events": { "categoryEmoji": "🎉", "categories": [], "roles": [] },
-  "media": { "categoryEmoji": "📸", "categories": [], "roles": [] },
-  "news": { "categoryEmoji": "📰", "categories": [], "roles": [] },
-  "global": { "categoryEmoji": "🌍", "categories": [], "roles": [] }
+  "gaming": {
+    "categoryEmoji": "🎮",
+    "categories": [
+      {
+        "name": "general",
+        "channels": ["chat", "media", "memes", "clips"]
+      },
+      {
+        "name": "voice",
+        "channels": ["General VC", "Squad VC", "AFK"]
+      },
+      {
+        "name": "info",
+        "channels": ["rules", "announcements"]
+      }
+    ],
+    "roles": [
+      { "name": "🎮 Owner", "color": "#ff0000" },
+      { "name": "🛡 Admin", "color": "#ff6600" },
+      { "name": "🎯 Moderator", "color": "#0099ff" },
+      { "name": "👥 Member", "color": "#00ff99" }
+    ]
+  },
+
+  "community": {
+    "categoryEmoji": "💬",
+    "categories": [
+      { "name": "general", "channels": ["chat", "introductions", "media"] },
+      { "name": "voice", "channels": ["General VC", "Chill VC"] },
+      { "name": "info", "channels": ["rules", "announcements"] }
+    ],
+    "roles": [
+      { "name": "👑 Owner", "color": "#ff0000" },
+      { "name": "🛡 Staff", "color": "#ffaa00" },
+      { "name": "👥 Member", "color": "#00ffaa" }
+    ]
+  },
+
+  "trading": {
+    "categoryEmoji": "📈",
+    "categories": [
+      { "name": "market", "channels": ["live-trades", "analysis", "signals"] },
+      { "name": "education", "channels": ["guides", "resources"] },
+      { "name": "info", "channels": ["rules", "announcements"] }
+    ],
+    "roles": [
+      { "name": "📊 Analyst", "color": "#00ffcc" },
+      { "name": "💎 VIP", "color": "#9900ff" },
+      { "name": "👥 Member", "color": "#00ffaa" }
+    ]
+  },
+
+  "crypto": {
+    "categoryEmoji": "🪙",
+    "categories": [
+      { "name": "crypto", "channels": ["btc-chat", "altcoins", "nft-talk"] },
+      { "name": "alpha", "channels": ["signals", "airdrops"] },
+      { "name": "info", "channels": ["rules", "announcements"] }
+    ],
+    "roles": [
+      { "name": "🪙 Holder", "color": "#ffaa00" },
+      { "name": "🚀 Trader", "color": "#00ffff" },
+      { "name": "👥 Member", "color": "#00ffaa" }
+    ]
+  },
+
+  "business": {
+    "categoryEmoji": "💼",
+    "categories": [
+      { "name": "networking", "channels": ["introductions", "partnerships"] },
+      { "name": "growth", "channels": ["marketing", "strategy"] },
+      { "name": "info", "channels": ["rules", "announcements"] }
+    ],
+    "roles": [
+      { "name": "💼 Founder", "color": "#ff0000" },
+      { "name": "📊 Manager", "color": "#ff9900" },
+      { "name": "👥 Member", "color": "#00ffaa" }
+    ]
+  },
+
+  "ai": {
+    "categoryEmoji": "🤖",
+    "categories": [
+      { "name": "ai-chat", "channels": ["prompts", "tools", "projects"] },
+      { "name": "coding", "channels": ["python", "js", "ai-models"] },
+      { "name": "info", "channels": ["rules", "announcements"] }
+    ],
+    "roles": [
+      { "name": "🤖 Developer", "color": "#00ffff" },
+      { "name": "🧠 Researcher", "color": "#ff00ff" },
+      { "name": "👥 Member", "color": "#00ffaa" }
+    ]
+  }
 }
